@@ -13,15 +13,6 @@ header {
     padding: 1rem 2rem;
 }
 
-@media only screen and (max-width: 400px) {
-    header {
-        background-color: #364552;
-        color: white;
-        padding: 1rem 2rem;
-        width: 100%;
-    }
-}
-
 #title {
     font-size: 3.5rem;
     text-align: center;
@@ -34,8 +25,15 @@ header {
 }
 
 #proyects {
-    max-width: 400px;
+    max-width: 95%;
     margin: 1rem auto;
+}
+
+@media only screen and (min-width: 400px) {
+    #proyects {
+        max-width: 400px;
+        margin: 1rem auto;
+    }
 }
 
 @media only screen and (min-width: 869px) {
@@ -83,15 +81,6 @@ footer {
     background-color: #222;
     padding: 2rem;
     color: white;
-}
-
-@media only screen and (max-width: 400px) {
-    footer {
-        background-color: #222;
-        padding: 2rem;
-        color: white;
-        width: 100%;
-    }
 }
 
 footer section {

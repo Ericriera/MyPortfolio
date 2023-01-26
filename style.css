@@ -6,6 +6,7 @@ body {
     margin: 0;
     background-color: #121212;
     color: white;
+    transition: all 0.5s ease;
 }
 
 .body {
@@ -36,6 +37,7 @@ nav {
     width: 50px;
     line-height: 70px;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 #sun, #moon {
@@ -47,6 +49,7 @@ nav {
     padding: 0 0 0 10px;
     width: 50px;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 #sun {
@@ -79,7 +82,7 @@ nav {
         margin: 0 auto;
     }
 
-    #moon {
+    #sun {
         display: none;
     }
     
@@ -101,8 +104,9 @@ nav {
         transition: color 0.3s ease;
         color: white;
         text-decoration: none;
-        margin-top: 2rem;
+        margin: 2rem auto 0;
         text-align: center;
+        width: 100px;
     }
 
     .menu_visible {
@@ -135,7 +139,7 @@ nav {
     }
 }
 
-.menu a:hover {
+.menu a:hover, #sun:hover, #moon:hover, #lang:hover {
     color: cornflowerblue;
 }
 
@@ -193,7 +197,7 @@ section h2 {
     border-radius: 0.5rem;
     padding: 0.25rem 0;
     cursor: pointer;
-    transition: box-shadow 0.3s ease;
+    transition: all 0.5s ease;
     text-decoration: none;
 }
 
@@ -208,7 +212,7 @@ section h2 {
         border-radius: 0.5rem;
         padding: 0.25rem 0;
         cursor: pointer;
-        transition: box-shadow 0.3s ease;
+        transition: all 0.5s ease;
         text-decoration: none;
     }
 }
@@ -224,9 +228,13 @@ section h2 {
         border-radius: 0.5rem;
         padding: 0.25rem 0;
         cursor: pointer;
-        transition: box-shadow 0.3s ease;
+        transition: all 0.5s ease;
         text-decoration: none;
     }
+}
+
+.targeta:hover {
+    box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.3);
 }
 
 .targetanight {
@@ -234,8 +242,8 @@ section h2 {
     color: white;
 }
 
-.targeta:hover {
-    box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.3);
+.targetanight:hover {
+    box-shadow: 0 0.1rem 0.4rem rgba(255, 255, 255, 0.3);
 }
 
 .targeta img {

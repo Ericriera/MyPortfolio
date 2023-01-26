@@ -4,7 +4,13 @@ html {
 
 body {
     margin: 0;
+    background-color: #121212;
+    color: white;
+}
+
+.body {
     background-color: #efefef;
+    color: black;
 }
 
 header {
@@ -26,10 +32,25 @@ nav {
     border: none;
     font-size: 1rem;
     font-weight: bold;
-    padding: 0 1rem;
+    padding: 0;
+    width: 50px;
     line-height: 70px;
-    float: right;
     cursor: pointer;
+}
+
+#sun, #moon {
+    color: white;
+    background: none;
+    border: none;
+    line-height: 70px;
+    font-size: 1rem;
+    padding: 0 0 0 10px;
+    width: 50px;
+    cursor: pointer;
+}
+
+#sun {
+    display: none;
 }
 
 @media only screen and (max-width: 509px) {
@@ -46,7 +67,20 @@ nav {
     }
 
     #lang {
-        margin-right: 41%;
+        line-height: 50px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    #sun, #moon {
+        line-height: 50px;
+        padding: 20px 0 0;
+        display: block;
+        margin: 0 auto;
+    }
+
+    #moon {
+        display: none;
     }
     
     .menu {
@@ -130,20 +164,20 @@ section h2 {
     margin: 0 2rem;
 }
 
-#proyects {
+#projects {
     max-width: 100%;
     margin: 1rem auto;
 }
 
 @media only screen and (min-width: 450px) {
-    #proyects {
+    #projects {
         max-width: 400px;
         margin: 1rem auto;
     }
 }
 
 @media only screen and (min-width: 869px) {
-    #proyects {
+    #projects {
         max-width: 869px;
         margin: 1rem auto;
     }
@@ -193,6 +227,11 @@ section h2 {
         transition: box-shadow 0.3s ease;
         text-decoration: none;
     }
+}
+
+.targetanight {
+    background-color: black;
+    color: white;
 }
 
 .targeta:hover {
@@ -294,7 +333,7 @@ footer p {
     margin: -70px 0 0;
 }
 
-#proyects:before {
+#projects:before {
     display: block;
     content: " ";
     height: 70px;

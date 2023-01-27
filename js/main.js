@@ -1,8 +1,10 @@
 function close_nav() {
+    openmenu = false;
     navMenu.classList.remove("menu_visible");
     navCross.classList.remove("cross_visible");
     navToggle.classList.add("toggle_visible");
-    if(getPageScroll().top > 20) nav.style.background = "#364552";
+    if(getPageScroll().top > 20 && darkmode) nav.style.background = "#222";
+    else if (getPageScroll().top > 20) nav.style.background = "#364552";
     else nav.style.background = "none";
 }
 
@@ -21,18 +23,23 @@ function getPageScroll() {
     return {top: yScroll, left: xScroll}
 }
 
+var darkmode = true;
+var openmenu = false;
+
+// Nav style
 const nav = document.querySelector("nav");
 const navMenu = document.querySelector(".menu");
 const logo = document.getElementById("logo");
 
 window.addEventListener("scroll", () => {
     if(getPageScroll().top > 20) {
-        nav.style.background = "#364552";
+        if(darkmode) nav.style.background = "#222";
+        else nav.style.background = "#364552";
         navMenu.style.lineHeight = "70px";
         logo.style.padding = "0 2rem";
     }
     else {
-        if(navToggle.outerHTML == '<button class="toggle toggle_visible"><i class="fa-solid fa-bars"></i></button>')nav.style.background = "none";
+        if(!openmenu)nav.style.background = "none";
         navMenu.style.lineHeight = "90px";
         if(document.documentElement.clientWidth >= 510) logo.style.padding = "10px 2rem";
     }
@@ -45,6 +52,7 @@ const projects = document.getElementById("nProjects");
 const aboutme = document.getElementById("nAboutme");
 
 navToggle.addEventListener("click", () => {
+    openmenu = true;
     navMenu.classList.add("menu_visible");
     navCross.classList.add("cross_visible");
     navToggle.classList.remove("toggle_visible"); 
@@ -65,19 +73,24 @@ navCross.addEventListener("click", () => {
 
 // Change Language
 const lang = document.getElementById('lang');
+const esab = '';
+const enab = '';
 
 lang.addEventListener("click", () => {
     close_nav();
     if (lang.innerText == 'ES') {
         lang.innerHTML = 'EN';
-        document.getElementById('subtitle').innerText = 'Estudiante de Ingeniería Informatica en FIB-UPC';
+        document.getElementById('overtitle').innerText = 'Hola 👋🏻, soy';
+        i = 0;
+        document.getElementById("subtitle").innerHTML = '';
+        text = 'Estudiante de Ingeniería Informatica en FIB-UPC';
         document.getElementById('nProjects').innerText = 'Proyectos';
         document.getElementById('nAboutme').innerText = 'Sobre mi';
         document.getElementById('tProjects').innerText = 'Proyectos';
         document.getElementById('tPortfolio').innerText = 'Mi Portfolio';
         document.getElementById('tPROP').innerText = 'Gestor de Archivos';
         document.getElementById('tAboutme').innerText = 'Sobre mi';
-        document.getElementById('txtAB').innerText = ' ';
+        document.getElementById('txtAB').innerText = esab;
         document.getElementById('fBTT').innerText = 'Volver Arriba ↑';
         document.getElementById('fContactme').innerText = 'Contáctame';
         document.getElementById('fResume').innerText = 'CV';
@@ -85,14 +98,17 @@ lang.addEventListener("click", () => {
     } 
     else {
         lang.innerHTML = 'ES';
-        document.getElementById('subtitle').innerText = 'Computer Engineering student at FIB-UPC';
+        document.getElementById('overtitle').innerText = "Hi 👋🏻, I'm";
+        i = 0;
+        document.getElementById("subtitle").innerHTML = '';
+        text = 'Computer Engineering student at FIB-UPC';
         document.getElementById('nProjects').innerText = 'Projects';
         document.getElementById('nAboutme').innerText = 'About me';
         document.getElementById('tProjects').innerText = 'Projects';
         document.getElementById('tPortfolio').innerText = 'My Portfolio';
         document.getElementById('tPROP').innerText = 'File Manager';
         document.getElementById('tAboutme').innerText = 'About me';
-        document.getElementById('txtAB').innerText = ' ';
+        document.getElementById('txtAB').innerText = enab;
         document.getElementById('fBTT').innerText = 'Back to top ↑';
         document.getElementById('fContactme').innerText = 'Contact me';
         document.getElementById('fResume').innerText = 'Resume';
@@ -107,6 +123,7 @@ const sun = document.getElementById('sun');
 const moon = document.getElementById('moon');
 
 sun.addEventListener("click", () => {
+    darkmode = false;
     close_nav();
     body.classList.add("body");
     targeta.forEach(element => {
@@ -118,11 +135,13 @@ sun.addEventListener("click", () => {
 });
 
 moon.addEventListener("click", () => {
+    darkmode = true;
     close_nav();
     body.classList.remove("body");
     targeta.forEach(element => {
         element.classList.add("targetanight");
     });
+    if(getPageScroll().top > 20) nav.style.background = "#222";
     if(document.documentElement.clientWidth < 510) sun.style.display = "block";
     else sun.style.display = "inline";
     moon.style.display = "none";
@@ -137,3 +156,17 @@ window.addEventListener("resize", () => {
     if(document.documentElement.clientWidth < 510 && moon.style.display == "inline") moon.style.display = "block";
     else if(document.documentElement.clientWidth >= 510 && moon.style.display == "block") moon.style.display = "inline";
 });
+
+var i = 0;
+var text = 'Computer Engineering student at FIB-UPC';
+var velocidad = 300;
+
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("subtitle").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, velocidad);
+  }
+}
+
+window.addEventListener("mouseover", typeWriter)

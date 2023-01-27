@@ -1,5 +1,6 @@
 html {
     font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -22,7 +23,7 @@ header {
     background-repeat: no-repeat;
     position: relative;
     height: 100vh;
-    padding: 0.02px
+    padding: 0.02px 0 0;
 }
 
 nav {
@@ -35,24 +36,27 @@ nav {
     height: 70px;
     float: left;
     padding: 10px 2rem;
+    margin: 0 1rem;
     transition: all 0.5s ease;
+}
+
+#overtitle {
+    display: block;
+    font-size: 2rem;
+    padding-top: 30vh; 
+    margin: 1rem 3rem;
 }
 
 #title {
     display: block;
-    font-size: 4rem;
-    text-align: center;
-    padding-top: 25vh; 
-    margin-left: 2rem;
-    margin-right: 2rem;
+    font-size: 5rem;
+    margin: 1rem 3rem;
 }
 
 #subtitle {
     display: block;
     font-size: 2rem;
-    text-align: center;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin: 1rem 3rem;
 }
 
 #lang {
@@ -80,11 +84,11 @@ nav {
     transition: color 0.3s ease;
 }
 
-#sun {
+#moon {
     display: none;
 }
 
-@media only screen and (max-width: 509px) {
+@media only screen and (max-width: 540px) {
     #logo {
         padding: 0 2rem;
     }
@@ -92,7 +96,7 @@ nav {
         font-size: 3.5rem;
     }
 
-    #subtitle {
+    #subtitle , #overtitle{
         font-size: 1.5rem;
     }
 
@@ -158,7 +162,7 @@ nav {
     }
 }
 
-@media only screen and (min-width: 510px) {    
+@media only screen and (min-width: 540px) {    
     .toggle, .cross {
         display: none;
     }
@@ -187,10 +191,11 @@ nav {
 section h2 {
     font-size: 1.5rem;
     text-align: center;
+    ´/*color: #1DA1F2;*/
 }
 
 #aboutme {
-    margin: 0 2rem;
+    margin: 0 3rem;
 }
 
 #projects {
@@ -263,7 +268,7 @@ section h2 {
 }
 
 .targetanight {
-    background-color: black;
+    background-color: #222;
     color: white;
 }
 
@@ -297,7 +302,7 @@ section h2 {
 
 footer {
     background-color: #222;
-    padding: 2rem;
+    padding: 2rem 3rem;
     color: white;
 }
 
@@ -318,7 +323,7 @@ footer a:hover {
     color: cornflowerblue;
 }
 
-@media only screen and (min-width: 510px) {
+@media only screen and (min-width: 540px) {
     footer section {
         float: right;
         margin-top: 0;

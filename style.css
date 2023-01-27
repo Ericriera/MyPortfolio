@@ -191,7 +191,7 @@ nav {
 section h2 {
     font-size: 1.5rem;
     text-align: center;
-    ´/*color: #1DA1F2;*/
+    /*color: #1DA1F2;*/
 }
 
 #aboutme {
@@ -267,12 +267,12 @@ section h2 {
     box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.3);
 }
 
-.targetanight {
+.darktargeta {
     background-color: #222;
     color: white;
 }
 
-.targetanight:hover {
+.darktargeta:hover {
     box-shadow: 0 0.1rem 0.4rem rgba(255, 255, 255, 0.3);
 }
 

@@ -127,7 +127,7 @@ sun.addEventListener("click", () => {
     close_nav();
     body.classList.add("body");
     targeta.forEach(element => {
-        element.classList.remove("targetanight");
+        element.classList.remove("darktargeta");
     });
     sun.style.display = "none";
     if(document.documentElement.clientWidth < 510) moon.style.display = "block";
@@ -139,7 +139,7 @@ moon.addEventListener("click", () => {
     close_nav();
     body.classList.remove("body");
     targeta.forEach(element => {
-        element.classList.add("targetanight");
+        element.classList.add("darktargeta");
     });
     if(getPageScroll().top > 20) nav.style.background = "#222";
     if(document.documentElement.clientWidth < 510) sun.style.display = "block";

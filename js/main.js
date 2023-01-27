@@ -2,12 +2,45 @@ function close_nav() {
     navMenu.classList.remove("menu_visible");
     navCross.classList.remove("cross_visible");
     navToggle.classList.add("toggle_visible");
+    if(getPageScroll().top > 20) nav.style.background = "#364552";
+    else nav.style.background = "none";
 }
+
+function getPageScroll() {
+    var xScroll, yScroll;
+    if (self.pageYOffset) {
+      yScroll = self.pageYOffset;
+      xScroll = self.pageXOffset;
+    } else if (document.documentElement && document.documentElement.scrollTop) {
+      yScroll = document.documentElement.scrollTop;
+      xScroll = document.documentElement.scrollLeft;
+    } else if (document.body) {// all other Explorers
+      yScroll = document.body.scrollTop;
+      xScroll = document.body.scrollLeft;
+    }
+    return {top: yScroll, left: xScroll}
+}
+
+const nav = document.querySelector("nav");
+const navMenu = document.querySelector(".menu");
+const logo = document.getElementById("logo");
+
+window.addEventListener("scroll", () => {
+    if(getPageScroll().top > 20) {
+        nav.style.background = "#364552";
+        navMenu.style.lineHeight = "70px";
+        logo.style.padding = "0 2rem";
+    }
+    else {
+        if(navToggle.outerHTML == '<button class="toggle toggle_visible"><i class="fa-solid fa-bars"></i></button>')nav.style.background = "none";
+        navMenu.style.lineHeight = "90px";
+        if(document.documentElement.clientWidth >= 510) logo.style.padding = "10px 2rem";
+    }
+})
 
 // Nav menu for mobile
 const navToggle = document.querySelector(".toggle");
 const navCross = document.querySelector(".cross");
-const navMenu = document.querySelector(".menu");
 const projects = document.getElementById("nProjects");
 const aboutme = document.getElementById("nAboutme");
 
@@ -15,6 +48,7 @@ navToggle.addEventListener("click", () => {
     navMenu.classList.add("menu_visible");
     navCross.classList.add("cross_visible");
     navToggle.classList.remove("toggle_visible"); 
+    nav.style.background = "#364552";
 });
 
 projects.addEventListener("click", () => {
@@ -43,6 +77,7 @@ lang.addEventListener("click", () => {
         document.getElementById('tPortfolio').innerText = 'Mi Portfolio';
         document.getElementById('tPROP').innerText = 'Gestor de Archivos';
         document.getElementById('tAboutme').innerText = 'Sobre mi';
+        document.getElementById('txtAB').innerText = ' ';
         document.getElementById('fBTT').innerText = 'Volver Arriba ↑';
         document.getElementById('fContactme').innerText = 'Contáctame';
         document.getElementById('fResume').innerText = 'CV';
@@ -57,6 +92,7 @@ lang.addEventListener("click", () => {
         document.getElementById('tPortfolio').innerText = 'My Portfolio';
         document.getElementById('tPROP').innerText = 'File Manager';
         document.getElementById('tAboutme').innerText = 'About me';
+        document.getElementById('txtAB').innerText = ' ';
         document.getElementById('fBTT').innerText = 'Back to top ↑';
         document.getElementById('fContactme').innerText = 'Contact me';
         document.getElementById('fResume').innerText = 'Resume';

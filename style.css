@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    background: url(img/portada.webp);
+    background: url(img/portada.png);
     color: white;
     background-attachment: fixed;
     background-size: cover;
@@ -30,6 +30,7 @@ nav {
     width: 100%;
     position: fixed;
     transition: all 0.5s ease;
+    z-index: 100;
 }
 
 #logo {
@@ -43,8 +44,17 @@ nav {
 #overtitle {
     display: block;
     font-size: 2rem;
-    padding-top: 30vh; 
+    padding-top: 20vh; 
     margin: 1rem 3rem;
+}
+
+@media only screen and (min-width: 373px) {
+    #overtitle {
+        display: block;
+        font-size: 2rem;
+        padding-top: 30vh; 
+        margin: 1rem 3rem;
+    }
 }
 
 #title {
@@ -91,6 +101,7 @@ nav {
 @media only screen and (max-width: 540px) {
     #logo {
         padding: 0 2rem;
+        margin: 0;
     }
     #title {
         font-size: 3.5rem;
@@ -199,15 +210,8 @@ section h2 {
 }
 
 #projects {
-    max-width: 100%;
+    max-width: min(400px, 100%);
     margin: 1rem auto;
-}
-
-@media only screen and (min-width: 450px) {
-    #projects {
-        max-width: 400px;
-        margin: 1rem auto;
-    }
 }
 
 @media only screen and (min-width: 869px) {
@@ -264,16 +268,12 @@ section h2 {
 }
 
 .targeta:hover {
-    box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.3);
+    transform: scale(1.1);
 }
 
 .darktargeta {
     background-color: #222;
     color: white;
-}
-
-.darktargeta:hover {
-    box-shadow: 0 0.1rem 0.4rem rgba(255, 255, 255, 0.3);
 }
 
 .targeta img {
@@ -297,7 +297,18 @@ section h2 {
 }
 
 #aboutme p {
+    display: block;
     text-align: justify;
+    margin: 1rem auto 2rem;
+}
+
+@media only screen and (min-width: 540px) {
+    #aboutme p {
+        display: block;
+        text-align: justify;
+        width: min(900px, 100% - 64px);
+        margin: 1rem auto 2rem;
+    }
 }
 
 footer {

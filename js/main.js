@@ -39,7 +39,10 @@ window.addEventListener("scroll", () => {
         logo.style.padding = "0 2rem";
     }
     else {
-        if(!openmenu)nav.style.background = "none";
+        if(!openmenu) {
+            nav.style.background = "transparent";
+            navMenu.style.background = "transparent";
+        }
         navMenu.style.lineHeight = "90px";
         if(document.documentElement.clientWidth >= 510) logo.style.padding = "10px 2rem";
     }
@@ -158,11 +161,19 @@ moon.addEventListener("click", () => {
 // Sun & moon display actualization for resize
 window.addEventListener("resize", () => {
     close_nav();
-    if(document.documentElement.clientWidth < 510 && sun.style.display == "inline") sun.style.display = "block";
-    else if(document.documentElement.clientWidth >= 510 && sun.style.display == "block") sun.style.display = "inline";
+    if (document.documentElement.clientWidth < 540) {
+        if(sun.style.display == "inline") sun.style.display = "block";
+        if(moon.style.display == "inline") moon.style.display = "block";
+        if(darkmode) navMenu.style.background = "#222";
+        else navMenu.style.background = "#364552";
+    }
     
-    if(document.documentElement.clientWidth < 510 && moon.style.display == "inline") moon.style.display = "block";
-    else if(document.documentElement.clientWidth >= 510 && moon.style.display == "block") moon.style.display = "inline";
+    if(document.documentElement.clientWidth >= 540) {
+        if(sun.style.display == "block") sun.style.display = "inline";
+        if(moon.style.display == "block") moon.style.display = "inline";
+        navMenu.style.background = "transparent";
+    }
+    
 });
 
 var i = 0;

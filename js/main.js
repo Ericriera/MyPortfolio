@@ -132,8 +132,10 @@ sun.addEventListener("click", () => {
     sun.style.display = "none";
     if(document.documentElement.clientWidth < 510) moon.style.display = "block";
     else moon.style.display = "inline";
-    if(getPageScroll().top > 20 || openmenu) nav.style.background = "#364552";
-    navMenu.style.background = "#364552";
+    if(getPageScroll().top > 20 || openmenu) {
+        nav.style.background = "#364552";
+        navMenu.style.background = "#364552";
+    } 
 });
 
 moon.addEventListener("click", () => {
@@ -147,8 +149,10 @@ moon.addEventListener("click", () => {
     if(document.documentElement.clientWidth < 510) sun.style.display = "block";
     else sun.style.display = "inline";
     moon.style.display = "none";
-    if(getPageScroll().top > 20 || openmenu) nav.style.background = "#222";
-    navMenu.style.background = "#222";
+    if(getPageScroll().top > 20 || openmenu) {
+        nav.style.background = "#222";
+        navMenu.style.background = "#222";
+    }
 });
 
 // Sun & moon display actualization for resize

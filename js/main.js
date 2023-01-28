@@ -5,7 +5,7 @@ function close_nav() {
     navToggle.classList.add("toggle_visible");
     if(getPageScroll().top > 20 && darkmode) nav.style.background = "#222";
     else if (getPageScroll().top > 20) nav.style.background = "#364552";
-    else nav.style.background = "none";
+    else nav.style.background = "transparent";
 }
 
 function getPageScroll() {
@@ -56,7 +56,8 @@ navToggle.addEventListener("click", () => {
     navMenu.classList.add("menu_visible");
     navCross.classList.add("cross_visible");
     navToggle.classList.remove("toggle_visible"); 
-    nav.style.background = "#364552";
+    if (darkmode) nav.style.background = "#222";
+    else nav.style.background = "#364552";
 });
 
 projects.addEventListener("click", () => {
@@ -73,11 +74,10 @@ navCross.addEventListener("click", () => {
 
 // Change Language
 const lang = document.getElementById('lang');
-const esab = '';
-const enab = '';
+const esab = 'Mi nombre es Eric Riera y actualmente estoy en el tercer año de la carrera de Ingenieria Informatica cursando la especialidad de ingenieria del software en FIB-UPC.';
+const enab = 'My name is Eric Riera and I am currently in my third year of Computer Engineering degree in software engineering at FIB-UPC.';
 
 lang.addEventListener("click", () => {
-    close_nav();
     if (lang.innerText == 'ES') {
         lang.innerHTML = 'EN';
         document.getElementById('overtitle').innerText = 'Hola 👋🏻, soy';
@@ -90,7 +90,7 @@ lang.addEventListener("click", () => {
         document.getElementById('tPortfolio').innerText = 'Mi Portfolio';
         document.getElementById('tPROP').innerText = 'Gestor de Archivos';
         document.getElementById('tAboutme').innerText = 'Sobre mi';
-        document.getElementById('txtAB').innerText = esab;
+        document.getElementById('txtAM').innerText = esab;
         document.getElementById('fBTT').innerText = 'Volver Arriba ↑';
         document.getElementById('fContactme').innerText = 'Contáctame';
         document.getElementById('fResume').innerText = 'CV';
@@ -108,7 +108,7 @@ lang.addEventListener("click", () => {
         document.getElementById('tPortfolio').innerText = 'My Portfolio';
         document.getElementById('tPROP').innerText = 'File Manager';
         document.getElementById('tAboutme').innerText = 'About me';
-        document.getElementById('txtAB').innerText = enab;
+        document.getElementById('txtAM').innerText = enab;
         document.getElementById('fBTT').innerText = 'Back to top ↑';
         document.getElementById('fContactme').innerText = 'Contact me';
         document.getElementById('fResume').innerText = 'Resume';
@@ -124,7 +124,7 @@ const moon = document.getElementById('moon');
 
 sun.addEventListener("click", () => {
     darkmode = false;
-    close_nav();
+    //close_nav();
     body.classList.add("body");
     targeta.forEach(element => {
         element.classList.remove("darktargeta");
@@ -132,11 +132,13 @@ sun.addEventListener("click", () => {
     sun.style.display = "none";
     if(document.documentElement.clientWidth < 510) moon.style.display = "block";
     else moon.style.display = "inline";
+    nav.style.background = "#364552";
+    navMenu.style.background = "#364552";
 });
 
 moon.addEventListener("click", () => {
     darkmode = true;
-    close_nav();
+    //close_nav();
     body.classList.remove("body");
     targeta.forEach(element => {
         element.classList.add("darktargeta");
@@ -145,6 +147,8 @@ moon.addEventListener("click", () => {
     if(document.documentElement.clientWidth < 510) sun.style.display = "block";
     else sun.style.display = "inline";
     moon.style.display = "none";
+    nav.style.background = "#222";
+    navMenu.style.background = "#222";
 });
 
 // Sun & moon display actualization for resize

@@ -111,7 +111,7 @@ nav {
         font-size: 1.5rem;
     }
 
-     .toggle, .cross {
+    .toggle, .cross {
         color: white;
         background: none;
         border: none;
@@ -136,13 +136,13 @@ nav {
         margin: 0 auto;
     }
 
-    #sun {
+    #moon {
         display: none;
     }
     
     .menu {
         display: block;
-        background-color: #364552;
+        background-color: #222;
         position: fixed;
         top: 70px;
         width: 100%;
@@ -150,7 +150,7 @@ nav {
         height: calc(100% - 69px);
         overflow-y: auto;
         left: 100%;
-        transition: left 0.3s ease;
+        transition: all 0.5s ease;
     }
     
     .menu a {
@@ -193,10 +193,10 @@ nav {
         text-decoration: none;
         margin-top: 0;
     }
-}
 
-.menu a:hover, #sun:hover, #moon:hover, #lang:hover {
-    color: cornflowerblue;
+    .menu a:hover, #sun:hover, #moon:hover, #lang:hover {
+        color: cornflowerblue;
+    }
 }
 
 section h2 {
@@ -235,6 +235,10 @@ section h2 {
     text-decoration: none;
 }
 
+.targeta:hover {
+    transform: scale(1.05);
+}
+
 @media only screen and (min-width: 450px) {
     .targeta {
         display: block;
@@ -248,6 +252,10 @@ section h2 {
         cursor: pointer;
         transition: all 0.5s ease;
         text-decoration: none;
+    }
+
+    .targeta:hover {
+        transform: scale(1.05);
     }
 }
 
@@ -265,10 +273,10 @@ section h2 {
         transition: all 0.5s ease;
         text-decoration: none;
     }
-}
 
-.targeta:hover {
-    transform: scale(1.1);
+    .targeta:hover {
+        transform: scale(1.1);
+    }
 }
 
 .darktargeta {
@@ -330,10 +338,6 @@ footer a {
     margin-top: 5px;
 }
 
-footer a:hover {
-    color: cornflowerblue;
-}
-
 @media only screen and (min-width: 540px) {
     footer section {
         float: right;
@@ -366,7 +370,7 @@ footer p {
 }
 
 
-@media only screen and (min-width: 510px) {
+@media only screen and (min-width: 540px) {
     footer p {
         display: inline-block;
         font-size: 12px;

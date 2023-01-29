@@ -25,6 +25,7 @@ function getPageScroll() {
 
 var darkmode = true;
 var openmenu = false;
+var en = true;
 
 // Nav style
 const nav = document.querySelector("nav");
@@ -41,7 +42,7 @@ window.addEventListener("scroll", () => {
     else {
         if(!openmenu) {
             nav.style.background = "transparent";
-            navMenu.style.background = "transparent";
+            if(document.documentElement.clientWidth >= 540) navMenu.style.background = "transparent";
         }
         navMenu.style.lineHeight = "90px";
         if(document.documentElement.clientWidth >= 510) logo.style.padding = "10px 2rem";
@@ -81,12 +82,12 @@ const esab = 'Mi nombre es Eric Riera y actualmente estoy en el tercer año de l
 const enab = 'My name is Eric Riera and I am currently in my third year of Computer Engineering degree in software engineering at FIB-UPC.';
 
 lang.addEventListener("click", () => {
-    if (lang.innerText == 'ES') {
+    if (en) {
+        en = false;
         lang.innerHTML = 'EN';
         document.getElementById('overtitle').innerText = 'Hola 👋🏻, soy';
-        i = 0;
-        document.getElementById("subtitle").innerHTML = '';
-        text = 'Estudiante de Ingeniería Informatica en FIB-UPC';
+        subtitleEn.style.display = 'none';
+        subtitleEs.style.display = 'inline';
         document.getElementById('nProjects').innerText = 'Proyectos';
         document.getElementById('nAboutme').innerText = 'Sobre mi';
         document.getElementById('tProjects').innerText = 'Proyectos';
@@ -100,11 +101,11 @@ lang.addEventListener("click", () => {
         document.getElementById('love').innerText = 'Hecho con 💻 y ❤️ por Eric';
     } 
     else {
+        en = true;
         lang.innerHTML = 'ES';
         document.getElementById('overtitle').innerText = "Hi 👋🏻, I'm";
-        i = 0;
-        document.getElementById("subtitle").innerHTML = '';
-        text = 'Computer Engineering student at FIB-UPC';
+        subtitleEs.style.display = 'none';
+        subtitleEn.style.display = 'inline';
         document.getElementById('nProjects').innerText = 'Projects';
         document.getElementById('nAboutme').innerText = 'About me';
         document.getElementById('tProjects').innerText = 'Projects';
@@ -176,16 +177,36 @@ window.addEventListener("resize", () => {
     
 });
 
-var i = 0;
-var text = 'Computer Engineering student at FIB-UPC';
-var velocidad = 300;
+//TypeWritter subtitle
+var texten = 'Computer Engineering student at FIB-UPC';
+var textes = 'Estudiante de Ingeniería Informatica en FIB-UPC';
+var subtitleEn = document.getElementById('subtitleEn');
+var subtitleEs = document.getElementById('subtitleEs');
 
-function typeWriter() {
-  if (i < text.length) {
-    document.getElementById("subtitle").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typeWriter, velocidad);
-  }
-}
+var typewriterEn = new Typewriter(subtitleEn, {
+    loop: true,
+    delay: 75,
+    deleteSpeed: 20,
+    cursor: '<span style="color: cornflowerblue;">|</span>' 
+});
 
-window.addEventListener("mouseover", typeWriter)
+typewriterEn
+        .pauseFor(1000)
+        .typeString(texten)
+        .pauseFor(2000)
+        .deleteChars(texten.length)
+        .start();
+
+var typewriterEs = new Typewriter(subtitleEs, {
+    loop: true,
+    delay: 75,
+    deleteSpeed: 20,
+    cursor: '<span style="color: cornflowerblue;">|</span>' 
+});
+
+typewriterEs
+        .pauseFor(1000)
+        .typeString(textes)
+        .pauseFor(2000)
+        .deleteChars(textes.length)
+        .start();

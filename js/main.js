@@ -210,3 +210,16 @@ typewriterEs
         .pauseFor(2000)
         .deleteChars(textes.length)
         .start();
+
+// Back to top button
+const backToTopButton = document.querySelector(".back-to-top");
+const footer = document.querySelector("footer");
+
+window.addEventListener("scroll", () => {
+  if (getPageScroll().top > 100) backToTopButton.classList.remove("hidden");
+  else backToTopButton.classList.add("hidden");
+});
+
+backToTopButton.addEventListener("click", () => {
+    document.body.scrollIntoView();
+});

@@ -326,6 +326,28 @@ section h2 {
     }
 }
 
+.back-to-top {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    background-color: cornflowerblue;
+    border-radius: 100%;
+    padding: 0.5rem 0.6rem;
+    border: none;
+    cursor: pointer;
+    transform: scale(1.3);
+    opacity: 100%;
+    transition: all 0.5s ease;
+}
+
+.back-to-top:hover {
+    transform: scale(1.5);
+}
+
+.hidden {
+    opacity: 0%;
+  }
+
 footer {
     background-color: #222;
     padding: 2rem 3rem;
@@ -333,7 +355,9 @@ footer {
 }
 
 footer section {
-    margin-top: 1rem;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
 }
 
 footer a {
@@ -346,11 +370,6 @@ footer a {
 }
 
 @media only screen and (min-width: 540px) {
-    footer section {
-        float: right;
-        margin-top: 0;
-    }
-
     footer a {
         display: inline;
         transition: color 0.3s ease;
@@ -376,16 +395,21 @@ footer p {
     text-align: center;
 }
 
+#slash {
+    display: none;
+}
+
 
 @media only screen and (min-width: 540px) {
     footer p {
-        display: inline-block;
+        display: inline;
         font-size: 12px;
         margin-top: 1.5rem;
+        text-align: center;
     }
 
-    #love {
-        float: right;
+    #slash {
+        display: inline;
     }
 }
 

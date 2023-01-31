@@ -4,9 +4,9 @@ function close_nav() {
     navMenu.style.backgroundColor = 'transparent';
     navCross.classList.remove("cross_visible");
     navToggle.classList.add("toggle_visible");
-    if(getPageScroll().top > 20 && darkmode) nav.style.background = '#222';
-    else if (getPageScroll().top > 20) nav.style.background = '#364552';
-    else nav.style.background = 'transparent';
+    if(getPageScroll().top > 20 && darkmode) nav.style.backgroundColor = '#222';
+    else if (getPageScroll().top > 20) nav.style.backgroundColor = '#364552';
+    else nav.style.backgroundColor = 'transparent';
 }
 
 function getPageScroll() {
@@ -35,13 +35,16 @@ const logo = document.getElementById("logo");
 
 window.addEventListener("scroll", () => {
     if(getPageScroll().top > 20) {
-        if(darkmode) nav.style.background = "#222";
-        else nav.style.background = "#364552";
+        if(darkmode) nav.style.backgroundColor = "#222";
+        else nav.style.backgroundColor = "#364552";
         navMenu.style.lineHeight = "70px";
         logo.style.padding = "0 2rem";
     }
     else {
-        if(!openmenu) nav.style.background = "transparent";
+        if(!openmenu) {
+            nav.style.backgroundColor = "transparent";
+            navMenu.style.backgroundColor = "transparent";
+        }
         if(document.documentElement.clientWidth >= 540) {
             navMenu.style.lineHeight = "90px";
             logo.style.padding = "10px 2rem";
@@ -154,8 +157,8 @@ sun.addEventListener("click", () => {
     if(document.documentElement.clientWidth < 540) moon.style.display = "block";
     else moon.style.display = "inline";
     if(getPageScroll().top > 20 || openmenu) {
-        nav.style.background = "#364552";
-        navMenu.style.background = "#364552";
+        nav.style.backgroundColor = "#364552";
+        if(document.documentElement.clientWidth < 540) navMenu.style.backgroundColor = "#364552";
     }
 });
 
@@ -171,8 +174,8 @@ moon.addEventListener("click", () => {
     else sun.style.display = "inline";
     moon.style.display = "none";
     if(getPageScroll().top > 20 || openmenu) {
-        nav.style.background = "#222";
-        navMenu.style.background = "#222";
+        nav.style.backgroundColor = "#222";
+        if(document.documentElement.clientWidth < 540) navMenu.style.backgroundColor = "#222";
     }
 });
 
@@ -188,6 +191,7 @@ window.addEventListener("resize", () => {
     }
     else {
         navMenu.style.lineHeight = "90px";
+        navMenu.style.backgroundColor = "transparent";
         logo.style.padding = "10px 2rem";
         if(sun.style.display == "block") sun.style.display = "inline";
         if(moon.style.display == "block") moon.style.display = "inline";

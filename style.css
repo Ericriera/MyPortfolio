@@ -8,6 +8,7 @@ body {
     background-color: #121212;
     color: white;
     transition: all 0.5s ease;
+    overflow: overlay;
 }
 
 .body {
@@ -339,7 +340,6 @@ footer p {
     display: none;
 }
 
-
 @media only screen and (min-width: 540px) {
     footer p {
         display: inline;
@@ -349,6 +349,20 @@ footer p {
     #slash {
         display: inline;
     }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: cornflowerblue;
+    border-radius: 10px;
 }
 
 /*Arreglo para que barra de navegacion no tape el contenido de la sección*/

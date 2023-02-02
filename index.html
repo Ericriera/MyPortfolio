@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="developer,upc,software">
     
     <title>Eric Riera</title>
     <link rel="icon" type="img/jpg" href="img/logo_negro.png"/>
@@ -12,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c39dbe24ca.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script defer src="js/main.js"></script>
 </head>
@@ -22,8 +24,8 @@
             <button class="toggle toggle_visible"><i class="fa-solid fa-bars"></i></button>
             <button class="cross"><i class="fa-solid fa-xmark"></i></button>
             <section class="menu">
-                <a id="nProjects" class="link" href="#projects">Projects</a>
                 <a id="nAboutme" class="link" href="#aboutme">About me</a>
+                <a id="nProjects" class="link" href="#projects">Projects</a>
                 <button id="sun"><i class="fa-solid fa-sun"></i></button>
                 <button id="moon"><i class="fa-solid fa-moon"></i></button>
                 <button id="lang">ES</button>
@@ -44,33 +46,62 @@
             </a>
         </div>
     </header>
+    <section id="aboutme">
+        <h2 id="tAboutme">About me</h2>
+        <section class="txt scroll-content fadeTop">
+            <p id="txtAM1"> My name is Eric Riera and I am currently in my third year of Computer Engineering degree studying the software engineering majoring at FIB-UPC.</p>
+            <p id="txtAM2">I describe myself as a fast learner and a good problem solver. I like learning new things every day and taking on new challenges.</p>
+            <p id="txtAM3">When I have free time, some of my hobbies are playing basketball, going to the gym, working on personal projects, watching series or movies and listening to music. I also love to travel and spend time with my family and friends.</p>
+        </section>
+    </section>
+    <section id="skills">
+        <p id="tSkills">These are some of my skills</p>
+        <div class="flexbox">
+            <section>
+                <i class="devicon-cplusplus-plain"></i>
+                <p>C++</p>
+            </section>
+            <section>
+                <i class="fa-brands fa-java"></i>
+                <p>JAVA</p>
+            </section>
+            <section>
+                <i class="fa-brands fa-html5"></i>
+                <p>HTML</p>
+            </section>
+            <section>
+                <i class="fa-brands fa-css3-alt"></i>
+                <p>CSS</p>
+            </section>
+            <section>
+                <i class="fa-brands fa-square-js"></i>
+                <p>JAVASCRIPT</p>
+            </section>
+            <section>
+                <i class="fa-brands fa-git-alt"></i>
+                <p>GIT</p>
+            </section>
+        </div>
+    </section>
     <section id="projects">
         <h2 id="tProjects">Projects</h2>
         <div class="flexbox">
-            <a class="targeta scroll-content fadeTop" href="https://github.com/Ericriera/Link-Page" target="_blank">
+            <a class="targeta" href="https://github.com/Ericriera/Link-Page" target="_blank">
                 <img src="img/linkpage.png">
                 <h3 id="tLinkPage">My Link Page</h3>
                 <p>HTML - CSS</p>
             </a>
-            <a class="targeta scroll-content fadeTop" href="https://github.com/Ericriera/MyPortfolio" target="_blank">
+            <a class="targeta" href="https://github.com/Ericriera/MyPortfolio" target="_blank">
                 <img src="img/portfolio.png">
                 <h3 id="tPortfolio">My Portfolio</h3>
                 <p>HTML - CSS - JAVASCRIPT</p>
             </a>
-            <a class="targeta scroll-content fadeTop" href="https://github.com/Ericriera/Gestor-De-Archivos-PROP" target="_blank">
+            <a class="targeta" href="https://github.com/Ericriera/Gestor-De-Archivos-PROP" target="_blank">
                 <img src="img/gestorarchivos.png">
                 <h3 id="tPROP">File Manager</h3>
                 <p>JAVA - SWING</p>
             </a>
         </div>
-    </section>
-    <section id="aboutme">
-        <h2 id="tAboutme">About me</h2>
-        <section class="txt scroll-content fadeTop">
-            <p id="txtAM1"> My name is Eric Riera and I am currently in my third year of Computer Engineering degree in software engineering at FIB-UPC.</p>
-            <p id="txtAM2">I describe myself as a fast learner and a good problem solver. I like learning new things every day and taking on new challenges.</p>
-            <p id="txtAM3">When I have free time, some of my hobbies are playing basketball, going to the gym, working on personal projects, watching series or movies and listening to music. I also love to travel and spend time with my family and friends.</p>
-        </section>
     </section>
     <button class="back-to-top hidden"><i class="fa-solid fa-chevron-up"></i></button>
     <footer>

@@ -74,11 +74,11 @@ navToggle.addEventListener("click", () => {
     
 });
 
-projects.addEventListener("click", () => {
+navAboutme.addEventListener("click", () => {
     close_nav();
 });
 
-navAboutme.addEventListener("click", () => {
+projects.addEventListener("click", () => {
     close_nav();
 });
 
@@ -91,7 +91,7 @@ const lang = document.getElementById('lang');
 const esab1 = 'Mi nombre es Eric Riera y actualmente estoy en el tercer año de la carrera de Ingenieria Informatica cursando la especialidad de ingenieria del software en FIB-UPC.';
 const esab2 = 'Me describo como una persona que aprende rápido y con buena capacidad de solucionar problemas. Me gusta aprender cosas nuevas cada día y asumir nuevos retos.';
 const esab3 = 'Cuando tengo tiempo libre, algunos de mis hobbies son jugar a baloncesto, ir al gimnasio, trabajar en proyectos personales, ver pelis o series y escuchar música. También me gusta viajar y pasar tiempo con mi familia y amigos.';
-const enab1 = 'My name is Eric Riera and I am currently in my third year of Computer Engineering degree in software engineering at FIB-UPC.';
+const enab1 = 'My name is Eric Riera and I am currently in my third year of Computer Engineering degree studying the software engineering majoring at FIB-UPC.';
 const enab2 = 'I describe myself as a fast learner and a good problem solver. I like learning new things every day and taking on new challenges.';
 const enab3 = 'When I have free time, some of my hobbies are playing basketball, going to the gym, working on personal projects, watching series or movies and listening to music. I also love to travel and spend time with my family and friends.';
 
@@ -102,16 +102,17 @@ lang.addEventListener("click", () => {
         document.getElementById('overtitle').innerText = 'Hola 👋🏻, soy';
         subtitleEn.style.display = 'none';
         subtitleEs.style.display = 'inline';
-        document.getElementById('nProjects').innerText = 'Proyectos';
         document.getElementById('nAboutme').innerText = 'Sobre mi';
-        document.getElementById('tProjects').innerText = 'Proyectos';
-        document.getElementById('tLinkPage').innerText = 'Mi Página de Links';
-        document.getElementById('tPortfolio').innerText = 'Mi Portfolio';
-        document.getElementById('tPROP').innerText = 'Gestor de Archivos';
+        document.getElementById('nProjects').innerText = 'Proyectos';
         document.getElementById('tAboutme').innerText = 'Sobre mi';
         document.getElementById('txtAM1').innerText = esab1;
         document.getElementById('txtAM2').innerText = esab2;
         document.getElementById('txtAM3').innerText = esab3;
+        document.getElementById('tSkills').innerText = 'Estas son algunas de mis habilidades';
+        document.getElementById('tProjects').innerText = 'Proyectos';
+        document.getElementById('tLinkPage').innerText = 'Mi Página de Links';
+        document.getElementById('tPortfolio').innerText = 'Mi Portfolio';
+        document.getElementById('tPROP').innerText = 'Gestor de Archivos';
         document.getElementById('fContactme').innerText = 'Contáctame';
         document.getElementById('fResume').innerText = 'CV';
         document.getElementById('love').innerText = 'Hecho con 💻 y ❤️ por Eric';
@@ -122,16 +123,17 @@ lang.addEventListener("click", () => {
         document.getElementById('overtitle').innerText = "Hi 👋🏻, I'm";
         subtitleEs.style.display = 'none';
         subtitleEn.style.display = 'inline';
-        document.getElementById('nProjects').innerText = 'Projects';
         document.getElementById('nAboutme').innerText = 'About me';
-        document.getElementById('tProjects').innerText = 'Projects';
-        document.getElementById('tLinkPage').innerText = 'My Link Page';
-        document.getElementById('tPortfolio').innerText = 'My Portfolio';
-        document.getElementById('tPROP').innerText = 'File Manager';
+        document.getElementById('nProjects').innerText = 'Projects';
         document.getElementById('tAboutme').innerText = 'About me';
         document.getElementById('txtAM1').innerText = enab1;
         document.getElementById('txtAM2').innerText = enab2;
         document.getElementById('txtAM3').innerText = enab3;
+        document.getElementById('tSkills').innerText = 'These are some of my skills';
+        document.getElementById('tProjects').innerText = 'Projects';
+        document.getElementById('tLinkPage').innerText = 'My Link Page';
+        document.getElementById('tPortfolio').innerText = 'My Portfolio';
+        document.getElementById('tPROP').innerText = 'File Manager';
         document.getElementById('fContactme').innerText = 'Contact me';
         document.getElementById('fResume').innerText = 'Resume';
         document.getElementById('love').innerText = 'Made with 💻 and ❤️ by Eric';

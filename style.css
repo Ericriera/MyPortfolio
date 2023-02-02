@@ -23,6 +23,7 @@ header {
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+    background-position: center center;
     height: 100vh;
     padding: 0.02px 0 0;
 }
@@ -225,6 +226,44 @@ section h2 {
     justify-content: center;
     gap: 1rem 2rem;
     padding: 1rem 1rem;
+}
+
+#skills {
+    background: url(img/skills.png);
+    color: white;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    padding: 1rem 1rem;
+}
+
+#tSkills {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#skills section {
+    display: inline;
+    width: 100px;
+    height: 100px;
+}
+
+#skills i {
+    display: block;
+    font-size: 65px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#skills p {
+    display: block;
+    text-align: center;
+}
+
+#projects {
+    margin: 1rem 0;
 }
 
 .targeta {

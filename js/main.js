@@ -36,7 +36,7 @@ const logo = document.getElementById("logo");
 window.addEventListener("scroll", () => {
     if(getPageScroll().top > 20) {
         if(darkmode) nav.style.backgroundColor = "#222";
-        else nav.style.backgroundColor = "#364552";
+        else nav.style.backgroundColor = "white";
         navMenu.style.lineHeight = "70px";
         logo.style.padding = "0 2rem";
     }
@@ -66,8 +66,8 @@ navToggle.addEventListener("click", () => {
         navMenu.style.backgroundColor = "#222";
     }
     else {
-        nav.style.backgroundColor = "#364552";
-        navMenu.style.backgroundColor = "#364552";
+        nav.style.backgroundColor = "white";
+        navMenu.style.backgroundColor = "white";
     } 
     navCross.classList.add("cross_visible");
     navToggle.classList.remove("toggle_visible");
@@ -115,6 +115,7 @@ lang.addEventListener("click", () => {
         document.getElementById('tPROP').innerText = 'Gestor de Archivos';
         document.getElementById('fContactme').innerText = 'Contáctame';
         document.getElementById('fResume').innerText = 'CV';
+        document.getElementById('fResume').href = 'CVEs.pdf';
         document.getElementById('love').innerText = 'Hecho con 💻 y ❤️ por Eric';
     } 
     else {
@@ -136,20 +137,31 @@ lang.addEventListener("click", () => {
         document.getElementById('tPROP').innerText = 'File Manager';
         document.getElementById('fContactme').innerText = 'Contact me';
         document.getElementById('fResume').innerText = 'Resume';
+        document.getElementById('fResume').href = 'CVEn.pdf';
         document.getElementById('love').innerText = 'Made with 💻 and ❤️ by Eric';
     } 
 });
 
 // Light or dark mode
+const header = document.querySelector("header");
 const body = document.querySelector("body");
 const targeta = document.querySelectorAll(".targeta");
 const sun = document.getElementById('sun');
 const moon = document.getElementById('moon');
 const aboutme = document.querySelector(".txt");
+const lmenu = document.querySelectorAll(".menu a");
 
 sun.addEventListener("click", () => {
     darkmode = false;
+    document.getElementById("logo").src="img/logo_negro.png";
+    header.classList.add("h");
     body.classList.add("body");
+    lang.style.color = "black";
+    navToggle.style.color = "black";
+    navCross.style.color = "black";
+    lmenu.forEach(element => {
+        element.style.color = "black";
+    });
     aboutme.classList.add("light");
     targeta.forEach(element => {
         element.classList.add("light");
@@ -159,14 +171,22 @@ sun.addEventListener("click", () => {
     if(document.documentElement.clientWidth < 540) moon.style.display = "block";
     else moon.style.display = "inline";
     if(getPageScroll().top > 20 || openmenu) {
-        nav.style.backgroundColor = "#364552";
-        if(document.documentElement.clientWidth < 540) navMenu.style.backgroundColor = "#364552";
+        nav.style.backgroundColor = "white";
+        if(document.documentElement.clientWidth < 540) navMenu.style.backgroundColor = "white";
     }
 });
 
 moon.addEventListener("click", () => {
     darkmode = true;
+    document.getElementById("logo").src="img/logo_blanco.png";
+    header.classList.remove("h");
     body.classList.remove("body");
+    lang.style.color = "white";
+    navToggle.style.color = "white";
+    navCross.style.color = "white";
+    lmenu.forEach(element => {
+        element.style.color = "white";
+    });
     aboutme.classList.remove("light");
     targeta.forEach(element => {
         element.classList.remove("light");

@@ -17,7 +17,7 @@ body {
 }
 
 header {
-    background: url(img/portada.png);
+    background-image: url(img/portada-dark.png);
     color: white;
     background-attachment: fixed;
     background-size: cover;
@@ -26,6 +26,12 @@ header {
     background-position: center center;
     height: 100vh;
     padding: 0.02px 0 0;
+    transition: all 0.5s ease;
+}
+
+.h {
+    background-image: url(img/portada-light.png);
+    color: black;
 }
 
 nav {
@@ -97,6 +103,7 @@ nav {
 
 #moon {
     display: none;
+    color: black;
 }
 
 @media only screen and (max-width: 540px) {
@@ -193,7 +200,7 @@ nav {
     }
 
     .menu a:hover, #sun:hover, #moon:hover, #lang:hover {
-        color: cornflowerblue;
+        color: cornflowerblue !important;
     }
 }
 

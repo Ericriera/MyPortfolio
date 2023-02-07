@@ -5,7 +5,7 @@ function close_nav() {
     navCross.classList.remove("cross_visible");
     navToggle.classList.add("toggle_visible");
     if(getPageScroll().top > 20 && darkmode) nav.style.backgroundColor = '#222';
-    else if (getPageScroll().top > 20) nav.style.backgroundColor = '#364552';
+    else if (getPageScroll().top > 20) nav.style.backgroundColor = '#fff';
     else nav.style.backgroundColor = 'transparent';
 }
 

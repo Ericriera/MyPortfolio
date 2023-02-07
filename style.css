@@ -374,6 +374,26 @@ footer a {
     .link {
         margin-left: 10px;
         margin-bottom: 10px;
+        position: relative;
+        display: inline-block;
+    }
+
+    .link::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: cornflowerblue;
+        border-radius: 4px;
+        scale: 0 1;
+        transform-origin: left;
+        transition: scale 0.3s;
+    }
+
+    .link:hover::before {
+        scale: 1;
     }
 }
 

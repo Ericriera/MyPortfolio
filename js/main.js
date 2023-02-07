@@ -39,6 +39,7 @@ window.addEventListener("scroll", () => {
         else nav.style.backgroundColor = "white";
         navMenu.style.lineHeight = "70px";
         logo.style.padding = "0 2rem";
+        document.getElementById("logo").src="img/logo_azul.png";
     }
     else {
         if(!openmenu) {
@@ -49,6 +50,8 @@ window.addEventListener("scroll", () => {
             navMenu.style.lineHeight = "90px";
             logo.style.padding = "10px 2rem";
         }
+        if(darkmode) document.getElementById("logo").src="img/logo_blanco.png";
+        else document.getElementById("logo").src="img/logo_negro.png";
     }
 })
 
@@ -153,7 +156,8 @@ const lmenu = document.querySelectorAll(".menu a");
 
 sun.addEventListener("click", () => {
     darkmode = false;
-    document.getElementById("logo").src="img/logo_negro.png";
+    if (getPageScroll().top > 20) document.getElementById("logo").src="img/logo_azul.png";
+    else document.getElementById("logo").src="img/logo_negro.png";
     header.classList.add("h");
     body.classList.add("body");
     lang.style.color = "black";
@@ -178,7 +182,8 @@ sun.addEventListener("click", () => {
 
 moon.addEventListener("click", () => {
     darkmode = true;
-    document.getElementById("logo").src="img/logo_blanco.png";
+    if (getPageScroll().top > 20) document.getElementById("logo").src="img/logo_azul.png";
+    else document.getElementById("logo").src="img/logo_blanco.png";
     header.classList.remove("h");
     body.classList.remove("body");
     lang.style.color = "white";

@@ -1,5 +1,5 @@
 html {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     scroll-behavior: smooth;
 }
 
@@ -42,10 +42,10 @@ nav {
 }
 
 #logo {
-    height: 70px;
+    height: 50px;
     float: left;
     padding: 10px 2rem;
-    margin: 0 1rem;
+    margin: 10px 1rem;
     transition: all 0.5s ease;
 }
 
@@ -109,8 +109,9 @@ nav {
 @media only screen and (max-width: 540px) {
     #logo {
         padding: 0 2rem;
-        margin: 0;
+        margin: 10px 0;
     }
+
     #title {
         font-size: 3.5rem;
     }
@@ -207,12 +208,17 @@ nav {
 section h2 {
     font-size: 1.5rem;
     text-align: center;
+    margin-top: 0;
 }
 
 @media only screen and (min-width: 540px) {
     section h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
+}
+
+.section {
+    padding: 5rem 1rem;
 }
 
 .txt {
@@ -223,7 +229,7 @@ section h2 {
     text-align: justify;
     padding: 1rem 2rem;
     border-radius: 0.5rem;
-    margin: 1rem auto 2rem;
+    margin: 1rem auto;
     transition: all 0.5s ease;
 }
 
@@ -232,7 +238,7 @@ section h2 {
     flex-flow: row wrap;
     justify-content: center;
     gap: 1rem 2rem;
-    padding: 1rem 1rem;
+    padding: 1rem 0;
 }
 
 #skills {
@@ -243,12 +249,12 @@ section h2 {
     background-repeat: no-repeat;
     background-position: center center;
     position: relative;
-    padding: 1rem 1rem;
 }
 
 #tSkills {
     font-size: 25px;
     font-weight: bold;
+    margin-top: 0;
 }
 
 #skills section {
@@ -259,7 +265,7 @@ section h2 {
 
 #skills i {
     display: block;
-    font-size: 65px;
+    font-size: 70px;
     text-align: center;
     transition: all 0.3s ease;
 }
@@ -267,10 +273,6 @@ section h2 {
 #skills p {
     display: block;
     text-align: center;
-}
-
-#projects {
-    margin: 1rem 0;
 }
 
 .targeta {
@@ -409,14 +411,6 @@ footer p {
 ::-webkit-scrollbar-thumb {
     background: cornflowerblue;
     border-radius: 10px;
-}
-
-/*Arreglo para que barra de navegacion no tape el contenido de la sección*/
-#aboutme:before, #projects:before {
-    display: block;
-    content: " ";
-    height: 70px;
-    margin: -70px 0 0;
 }
 
 /*.scrolldown button*/

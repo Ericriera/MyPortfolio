@@ -51,13 +51,13 @@ nav {
 
 #intro {
     display: block;
-    padding-top: 20vh;
+    padding-top: 15vh;
     margin: 1rem 3rem;
 }
 
 @media only screen and (min-width: 540px) {
     #intro {
-        padding-top: 30vh;
+        padding-top: 25vh;
     }
 }
 
@@ -203,6 +203,17 @@ nav {
     .menu a:hover, #sun:hover, #moon:hover, #lang:hover {
         color: cornflowerblue !important;
     }
+}
+
+.socialicon {
+    font-size: 2rem;
+    color: white;
+    margin-right: 1rem;
+    transition: all 0.3s ease;
+}
+
+.socialicon:hover {
+    color: cornflowerblue;
 }
 
 section h2 {

@@ -153,6 +153,7 @@ const sun = document.getElementById('sun');
 const moon = document.getElementById('moon');
 const aboutme = document.querySelector(".txt");
 const lmenu = document.querySelectorAll(".menu a");
+const socialicons = document.querySelectorAll(".socialicon");
 
 sun.addEventListener("click", () => {
     darkmode = false;
@@ -163,6 +164,9 @@ sun.addEventListener("click", () => {
     lang.style.color = "black";
     navToggle.style.color = "black";
     navCross.style.color = "black";
+    socialicons.forEach(element => {
+        element.style.color = "black";
+    });
     lmenu.forEach(element => {
         element.style.color = "black";
     });
@@ -189,6 +193,9 @@ moon.addEventListener("click", () => {
     lang.style.color = "white";
     navToggle.style.color = "white";
     navCross.style.color = "white";
+    socialicons.forEach(element => {
+        element.style.color = "white";
+    });
     lmenu.forEach(element => {
         element.style.color = "white";
     });

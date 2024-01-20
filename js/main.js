@@ -1,32 +1,21 @@
-function close_nav() {
+const close_nav = () => {
     openmenu = false;
     navMenu.style.left = '100%';
     navMenu.style.backgroundColor = 'transparent';
     navCross.classList.remove("cross_visible");
     navToggle.classList.add("toggle_visible");
-    if(getPageScroll().top > 20 && darkmode) nav.style.backgroundColor = '#222';
-    else if (getPageScroll().top > 20) nav.style.backgroundColor = '#fff';
-    else nav.style.backgroundColor = 'transparent';
-}
+    const { top } = getPageScroll();
+    nav.style.backgroundColor = (top > 20) ? (darkmode ? '#222' : '#fff') : 'transparent';
+};
 
-function getPageScroll() {
-    var xScroll, yScroll;
-    if (self.pageYOffset) {
-      yScroll = self.pageYOffset;
-      xScroll = self.pageXOffset;
-    } else if (document.documentElement && document.documentElement.scrollTop) {
-      yScroll = document.documentElement.scrollTop;
-      xScroll = document.documentElement.scrollLeft;
-    } else if (document.body) {// all other Explorers
-      yScroll = document.body.scrollTop;
-      xScroll = document.body.scrollLeft;
-    }
-    return {top: yScroll, left: xScroll}
-}
+const getPageScroll = () => {
+    const { scrollTop, scrollLeft } = document.documentElement || document.body;
+    return { top: scrollTop, left: scrollLeft };
+};
 
-var darkmode = true;
-var openmenu = false;
-var en = true;
+let darkmode = true;
+let openmenu = false;
+let en = true;
 
 // Nav style
 const nav = document.querySelector("nav");
@@ -91,12 +80,12 @@ navCross.addEventListener("click", () => {
 
 // Change Language
 const lang = document.getElementById('lang');
-const esab1 = 'Mi nombre es Eric Riera y actualmente estoy en el tercer año de la carrera de Ingenieria Informatica cursando la especialidad de ingenieria del software en FIB-UPC.';
+const esab1 = 'Mi nombre es Eric Riera y actualmente estoy en el último año de la carrera de Ingenieria Informatica cursando la especialidad de ingenieria del software en FIB-UPC.';
 const esab2 = 'Me describo como una persona que aprende rápido y con buena capacidad de solucionar problemas. Me gusta aprender cosas nuevas cada día y asumir nuevos retos.';
-const esab3 = 'Cuando tengo tiempo libre, algunos de mis hobbies son jugar a baloncesto, ir al gimnasio, trabajar en proyectos personales, ver pelis o series y escuchar música. También me gusta viajar y pasar tiempo con mi familia y amigos.';
+const esab3 = 'Cuando tengo tiempo libre, algunos de mis hobbies son jugar a baloncesto, trabajar en proyectos personales, ver pelis o series y escuchar música. También me gusta viajar y pasar tiempo con mi familia y amigos.';
 const enab1 = 'My name is Eric Riera and I am currently in my third year of Computer Engineering degree studying the software engineering majoring at FIB-UPC.';
 const enab2 = 'I describe myself as a fast learner and a good problem solver. I like learning new things every day and taking on new challenges.';
-const enab3 = 'When I have free time, some of my hobbies are playing basketball, going to the gym, working on personal projects, watching series or movies and listening to music. I also love to travel and spend time with my family and friends.';
+const enab3 = 'When I have free time, some of my hobbies are playing basketball, working on personal projects, watching series or movies and listening to music. I also love to travel and spend time with my family and friends.';
 
 lang.addEventListener("click", () => {
     if (en) {
@@ -113,9 +102,7 @@ lang.addEventListener("click", () => {
         document.getElementById('txtAM3').innerText = esab3;
         document.getElementById('tSkills').innerText = 'Estas son algunas de mis habilidades';
         document.getElementById('tProjects').innerText = 'Proyectos';
-        document.getElementById('tLinkPage').innerText = 'Mi Página de Links';
         document.getElementById('tPortfolio').innerText = 'Mi Portfolio';
-        document.getElementById('tPROP').innerText = 'Gestor de Archivos';
         document.getElementById('fContactme').innerText = 'Contáctame';
         document.getElementById('fResume').innerText = 'CV';
         document.getElementById('fResume').href = 'CVEs.pdf';
@@ -135,9 +122,7 @@ lang.addEventListener("click", () => {
         document.getElementById('txtAM3').innerText = enab3;
         document.getElementById('tSkills').innerText = 'These are some of my skills';
         document.getElementById('tProjects').innerText = 'Projects';
-        document.getElementById('tLinkPage').innerText = 'My Link Page';
         document.getElementById('tPortfolio').innerText = 'My Portfolio';
-        document.getElementById('tPROP').innerText = 'File Manager';
         document.getElementById('fContactme').innerText = 'Contact me';
         document.getElementById('fResume').innerText = 'Resume';
         document.getElementById('fResume').href = 'CVEn.pdf';
@@ -153,7 +138,9 @@ const sun = document.getElementById('sun');
 const moon = document.getElementById('moon');
 const aboutme = document.querySelector(".txt");
 const lmenu = document.querySelectorAll(".menu a");
-const socialicons = document.querySelectorAll(".socialicon");
+const socialIcons = document.querySelectorAll(".socialIcon");
+const mail = document.querySelectorAll(".mail");
+const projectLinks = document.querySelectorAll(".projectLinks");
 
 sun.addEventListener("click", () => {
     darkmode = false;
@@ -164,7 +151,10 @@ sun.addEventListener("click", () => {
     lang.style.color = "black";
     navToggle.style.color = "black";
     navCross.style.color = "black";
-    socialicons.forEach(element => {
+    socialIcons.forEach(element => {
+        element.style.color = "black";
+    });
+    mail.forEach(element => {
         element.style.color = "black";
     });
     lmenu.forEach(element => {
@@ -173,6 +163,9 @@ sun.addEventListener("click", () => {
     aboutme.classList.add("light");
     targeta.forEach(element => {
         element.classList.add("light");
+    });
+    projectLinks.forEach(element => {
+        element.style.color = "black";
     });
     backToTopButton.style.color = 'white';
     sun.style.display = "none";
@@ -193,7 +186,10 @@ moon.addEventListener("click", () => {
     lang.style.color = "white";
     navToggle.style.color = "white";
     navCross.style.color = "white";
-    socialicons.forEach(element => {
+    socialIcons.forEach(element => {
+        element.style.color = "white";
+    });
+    mail.forEach(element => {
         element.style.color = "white";
     });
     lmenu.forEach(element => {
@@ -202,6 +198,9 @@ moon.addEventListener("click", () => {
     aboutme.classList.remove("light");
     targeta.forEach(element => {
         element.classList.remove("light");
+    });
+    projectLinks.forEach(element => {
+        element.style.color = "white";
     });
     backToTopButton.style.color = 'black';
     if(document.documentElement.clientWidth < 540) sun.style.display = "block";
@@ -233,12 +232,14 @@ window.addEventListener("resize", () => {
 });
 
 //TypeWritter subtitle
-var texten = 'Computer Engineering student at FIB-UPC';
-var textes = 'Estudiante de Ingeniería Informatica en FIB-UPC';
-var subtitleEn = document.getElementById('subtitleEn');
-var subtitleEs = document.getElementById('subtitleEs');
+let texten = 'Computer Engineering student at FIB-UPC';
+let textes = 'Estudiante de Ingeniería Informatica en FIB-UPC';
+let text2en = 'Full Stack Developer Intern at Amphora Logistics';
+let text2es = 'Full Stack Developer Intern en Amphora Logistics';
+let subtitleEn = document.getElementById('subtitleEn');
+let subtitleEs = document.getElementById('subtitleEs');
 
-var typewriterEn = new Typewriter(subtitleEn, {
+let typewriterEn = new Typewriter(subtitleEn, {
     loop: true,
     delay: 75,
     deleteSpeed: 20,
@@ -250,9 +251,13 @@ typewriterEn
         .typeString(texten)
         .pauseFor(2000)
         .deleteChars(texten.length)
+        .pauseFor(1000)
+        .typeString(text2en)
+        .pauseFor(2000)
+        .deleteChars(text2en.length)
         .start();
 
-var typewriterEs = new Typewriter(subtitleEs, {
+let typewriterEs = new Typewriter(subtitleEs, {
     loop: true,
     delay: 75,
     deleteSpeed: 20,
@@ -264,6 +269,10 @@ typewriterEs
         .typeString(textes)
         .pauseFor(2000)
         .deleteChars(textes.length)
+        .pauseFor(1000)
+        .typeString(text2es)
+        .pauseFor(2000)
+        .deleteChars(text2es.length)
         .start();
 
 // Back to top button
@@ -283,7 +292,7 @@ window.addEventListener('scroll', function()  {
     let elements = document.getElementsByClassName('scroll-content');
     let screenSize = window.innerHeight;
     
-      for(var i = 0; i < elements.length; i++) {
+      for(let i = 0; i < elements.length; i++) {
         let element = elements[i];
   
         if(element.getBoundingClientRect().top < screenSize) {

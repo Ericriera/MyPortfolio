@@ -205,14 +205,22 @@ nav {
     }
 }
 
-.socialicon {
+.socialIcon {
     font-size: 2rem;
     color: white;
     margin-right: 1rem;
     transition: all 0.3s ease;
 }
 
-.socialicon:hover {
+.mail {
+    margin-right: 1rem;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 1rem;
+} 
+
+.socialIcon:hover {
     color: cornflowerblue;
 }
 
@@ -293,17 +301,11 @@ section h2 {
     color: white;
     border-radius: 0.5rem;
     padding: 0.25rem 0;
-    cursor: pointer;
-    transition: all 0.5s ease;
     text-decoration: none;
 }
 
-.targeta:hover {
-    transform: scale(1.05);
-}
-
 .targeta img {
-    height: 180px;
+    height: 150px;
     display: block;
     margin: 1rem auto 0rem;
     border-radius: 0.5rem;
@@ -319,8 +321,17 @@ section h2 {
     }
 }
 
-.targeta h3, .targeta p {
+.targeta h3, .targeta p, .targeta div {
     text-align: center;
+}
+
+.projectLinks {
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.projectLinks:hover {
+    transform: scale(1.1);
 }
 
 .light {

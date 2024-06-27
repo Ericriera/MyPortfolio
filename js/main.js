@@ -80,10 +80,10 @@ navCross.addEventListener("click", () => {
 
 // Change Language
 const lang = document.getElementById('lang');
-const esab1 = 'Mi nombre es Eric Riera y actualmente estoy en el último año de la carrera de Ingenieria Informatica cursando la especialidad de ingenieria del software en FIB-UPC.';
+const esab1 = 'Mi nombre es Eric Riera y acabo de finalizar mi grado en Ingeniería Informática con especialización en Ingeniería de Software en la FIB-UPC.';
 const esab2 = 'Me describo como una persona que aprende rápido y con buena capacidad de solucionar problemas. Me gusta aprender cosas nuevas cada día y asumir nuevos retos.';
 const esab3 = 'Cuando tengo tiempo libre, algunos de mis hobbies son jugar a baloncesto, trabajar en proyectos personales, ver pelis o series y escuchar música. También me gusta viajar y pasar tiempo con mi familia y amigos.';
-const enab1 = 'My name is Eric Riera and I am currently in my third year of Computer Engineering degree studying the software engineering majoring at FIB-UPC.';
+const enab1 = 'My name is Eric Riera, and I just have completed my degree in Computer Engineering with a major in Software Engineering at FIB-UPC.';
 const enab2 = 'I describe myself as a fast learner and a good problem solver. I like learning new things every day and taking on new challenges.';
 const enab3 = 'When I have free time, some of my hobbies are playing basketball, working on personal projects, watching series or movies and listening to music. I also love to travel and spend time with my family and friends.';
 
@@ -232,10 +232,10 @@ window.addEventListener("resize", () => {
 });
 
 //TypeWritter subtitle
-let texten = 'Computer Engineering student at FIB-UPC';
-let textes = 'Estudiante de Ingeniería Informatica en FIB-UPC';
-let text2en = 'Full Stack Developer Intern at Amphora Logistics';
-let text2es = 'Full Stack Developer Intern en Amphora Logistics';
+let texten = 'Software Engineer';
+let textes = 'Ingeniero de software';
+let text2en = 'Full Stack Developer';
+let text2es = 'Desarrollador Full Stack';
 let subtitleEn = document.getElementById('subtitleEn');
 let subtitleEs = document.getElementById('subtitleEs');
 

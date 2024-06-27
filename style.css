@@ -50,7 +50,9 @@ nav {
 }
 
 #intro {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     padding-top: 15vh;
     margin: 1rem 3rem;
 }
@@ -228,6 +230,17 @@ section h2 {
     font-size: 1.5rem;
     text-align: center;
     margin-top: 0;
+}
+
+.profilephoto {
+    height: 50vh;
+    border-radius: 100%;
+}
+
+@media (max-width: 1024px) {
+    .profile-container {
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 540px) {
